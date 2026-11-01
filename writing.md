@@ -3,6 +3,8 @@ layout: default
 title: Writing
 permalink: /writing/
 ---
+<div class="page" markdown="1">
+
 # Writing
 
 {% if site.posts.size > 0 %}
@@ -14,3 +16,4 @@ permalink: /writing/
 {% else %}
 Nothing here yet.
 {% endif %}
+</div>
