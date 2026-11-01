@@ -1,0 +1,80 @@
+:root {
+  --bg: #fbfaf7;
+  --fg: #1d1d1b;
+  --muted: #6b6a64;
+  --rule: #e4e1d8;
+  --accent: #0b6e4f;
+  --font: ui-sans-serif, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141413;
+    --fg: #ecebe6;
+    --muted: #9c9a92;
+    --rule: #2c2b28;
+    --accent: #5ccfa5;
+  }
+}
+
+* { box-sizing: border-box; }
+html { font-size: 112.5%; }
+body {
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 2.5rem 1.25rem 3rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+
+header.site {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 3rem;
+}
+header.site .name { color: var(--fg); font-weight: 600; text-decoration: none; }
+header.site nav { display: flex; gap: 1.25rem; font-size: 0.9rem; }
+header.site nav a { color: var(--muted); text-decoration: none; }
+header.site nav a:hover { color: var(--accent); }
+
+h1 { font-size: 2rem; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 1rem; }
+h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 2.75rem 0 1rem;
+}
+
+.lede { font-size: 1.2rem; line-height: 1.5; margin: 0 0 1rem; }
+
+ul { padding-left: 1.1rem; }
+li { margin: 0.35rem 0; }
+
+dl.projects { margin: 0; }
+dl.projects dt { font-weight: 600; margin-top: 1.1rem; }
+dl.projects dt:first-child { margin-top: 0; }
+dl.projects dd { margin: 0.15rem 0 0; color: var(--muted); }
+
+ul.posts { list-style: none; padding: 0; }
+ul.posts li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--rule); }
+ul.posts time, .meta { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+
+code, pre { font-family: var(--mono); font-size: 0.88em; }
+pre { overflow-x: auto; padding: 1rem; border: 1px solid var(--rule); border-radius: 4px; }
+blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 3px solid var(--rule); color: var(--muted); }
+
+footer.site { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); }
+footer.site a { color: var(--muted); }
+.back { margin-top: 3rem; font-size: 0.9rem; }

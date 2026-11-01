@@ -1,0 +1,20 @@
+title: Francesco Manzoni
+description: Security leader in financial services. Product security, application security and offensive security.
+url: https://francescomanzoni.com
+lang: en-GB
+
+permalink: /writing/:year/:title/
+markdown: kramdown
+timezone: Europe/London
+
+# No plugins and no remote theme: nothing to patch.
+plugins: []
+
+# Jekyll skips dot-folders unless told otherwise.
+include:
+  - .well-known
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
