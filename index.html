@@ -2,84 +2,73 @@
 layout: default
 ---
 <section class="hero">
-  <div class="hero-text">
-    <h1>Francesco<br>Manzoni</h1>
-    <p class="lede">I lead product security, application security and offensive security teams in financial services. Nearly twenty years in, I still write code and build the tools I wish I had.</p>
-    <p class="where">Based in the UK</p>
-  </div>
-
-  <figure class="dfd" aria-hidden="true">
-    <svg viewBox="0 0 360 300" role="presentation" focusable="false">
-      <defs>
-        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-          <path class="head" d="M0 0 L10 5 L0 10 z"/>
-        </marker>
-      </defs>
-
-      <path class="boundary" d="M164 6 C 152 92, 112 140, 6 158"/>
-      <text class="boundary-label" x="12" y="180">trust boundary</text>
-
-      <rect class="entity" x="14" y="36" width="96" height="44"/>
-      <text class="lbl" x="62" y="63">People</text>
-
-      <circle class="process" cx="232" cy="58" r="36"/>
-      <text class="lbl" x="232" y="63">Design</text>
-
-      <circle class="process" cx="294" cy="182" r="36"/>
-      <text class="lbl" x="294" y="187">Build</text>
-
-      <circle class="process" cx="156" cy="226" r="36"/>
-      <text class="lbl" x="156" y="231">Run</text>
-
-      <line class="store" x1="8" y1="258" x2="88" y2="258"/>
-      <line class="store" x1="8" y1="292" x2="88" y2="292"/>
-      <text class="lbl" x="48" y="280">Data</text>
-
-      <line class="flow" x1="112" y1="58" x2="192" y2="58" marker-end="url(#arrow)"/>
-      <line class="flow" x1="250" y1="90" x2="278" y2="146" marker-end="url(#arrow)"/>
-      <line class="flow" x1="258" y1="194" x2="194" y2="214" marker-end="url(#arrow)"/>
-      <line class="flow" x1="122" y1="238" x2="92" y2="252" marker-end="url(#arrow)"/>
-    </svg>
-  </figure>
+  <h1>Francesco<br>Manzoni</h1>
+  <svg class="castle" viewBox="0 0 200 170" role="img" aria-label="A line drawing of a castle gatehouse"><line x1="10" y1="160" x2="190" y2="160" fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></line><path d="M10 160 V112 H40 M160 112 H190 V160" fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path><rect x="80" y="80" width="40" height="80" fill="#fff" stroke="#000" stroke-width="2" stroke-linejoin="round"></rect><rect x="84" y="72" width="8" height="8" fill="#fff" stroke="#000" stroke-width="2" stroke-linejoin="round"></rect><rect x="96" y="72" width="8" height="8" fill="#fff" stroke="#000" stroke-width="2" stroke-linejoin="round"></rect><rect x="108" y="72" width="8" height="8" fill="#fff" stroke="#000" stroke-width="2" stroke-linejoin="round"></rect><path d="M40 160 V50 h8 v-10 h8 v10 h8 v-10 h8 v10 h8 V160" fill="#fff" stroke="#000" stroke-width="2" stroke-linejoin="round"></path><path d="M120 160 V50 h8 v-10 h8 v10 h8 v-10 h8 v10 h8 V160" fill="#fff" stroke="#000" stroke-width="2" stroke-linejoin="round"></path><path d="M88 160 v-34 a12 12 0 0 1 24 0 v34" fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path><path d="M94 116 V160 M100 114 V160 M106 116 V160 M88 136 H112 M88 148 H112" fill="none" stroke="#000" stroke-width="1.25" stroke-linecap="round"></path><rect x="57" y="68" width="6" height="14" rx="3" fill="#fff" stroke="#000" stroke-width="2" stroke-linejoin="round"></rect><rect x="137" y="68" width="6" height="14" rx="3" fill="#fff" stroke="#000" stroke-width="2" stroke-linejoin="round"></rect><line x1="60" y1="40" x2="60" y2="14" fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></line><path d="M60 14 l16 5 l-16 5 z" fill="#000" stroke="#000" stroke-width="2" stroke-linejoin="round"></path><line x1="140" y1="40" x2="140" y2="14" fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></line><path d="M140 14 l16 5 l-16 5 z" fill="#000" stroke="#000" stroke-width="2" stroke-linejoin="round"></path></svg>
 </section>
 
-<section class="block">
-  <h2>What I work on</h2>
-  <ul class="work">
-    <li>Building security into how software is designed, built and shipped</li>
-    <li>Threat modelling that engineering teams can run themselves</li>
-    <li>Red teaming and penetration testing that turn findings into fixes</li>
-    <li>Securing AI and LLM systems, including agentic workflows</li>
-    <li>Explaining security risk to boards and executives in plain terms</li>
-    <li>Hiring and mentoring security engineers</li>
+<p class="lede">I've spent nearly twenty years breaking things so they can be built back stronger, looking after critical infrastructure in banking, financial services and utilities. Today I lead product security, application security and offensive security teams. I still write code and tinker, because the best way to understand a system is to take it apart.</p>
+
+<section class="timeline">
+  <div class="row-head">
+    <h2 class="label">Same four events. Different risk.</h2>
+    <a class="ul always" href="https://github.com/corifeo/VulnState">From vulnstate</a>
+  </div>
+  <div class="track" aria-hidden="true">
+    <div class="axis"></div>
+    <div class="ev rep"><span class="dot"></span><span>reported</span></div>
+    <div class="ev fix"><span class="dot"></span><span>fixed</span></div>
+    <div class="ev dis"><span class="dot"></span><span>disclosed</span></div>
+    <div class="ev exp"><span class="sq"></span><span>exploited</span></div>
+  </div>
+  <div class="caps">
+    <p class="cap c1">Fixed before anyone exploited it.</p>
+    <p class="cap c2">Exploited before anyone knew. A zero-day.</p>
+    <p class="cap c3">Disclosed, exploited, then fixed.</p>
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="latest">
+  <div class="row-head">
+    <h2 class="label">Latest writing</h2>
+    <a class="ul always" href="/writing/">All writing</a>
+  </div>
+  <ul class="posts">
+    {% for post in site.posts limit:2 %}
+    <li><a class="post-row" href="{{ post.url }}">
+      <span class="date">{{ post.date | date: "%-d %b %Y" }}</span>
+      <span class="title">{{ post.title }}</span>
+    </a></li>
+    {% endfor %}
   </ul>
 </section>
+{% endif %}
 
-<section class="block">
-  <h2>Background</h2>
-  <p>I've built and run security programmes in utilities, finance and life sciences. Before moving into product security, my work centred on cyber defence: security operations, incident response, vulnerability management and threat intelligence.</p>
-  <p class="creds">CISSP. SANS MGT514, MGT516, MGT520, FOR578 and SEC575.</p>
-</section>
+<div class="cols">
+  <section>
+    <h2 class="label">What I work on</h2>
+    <ul class="work">
+      <li>Security built into how software is designed, built and shipped</li>
+      <li>Threat modelling teams can run themselves</li>
+      <li>Red teaming that turns findings into fixes</li>
+      <li>Securing AI and LLM systems</li>
+      <li>Security risk in plain terms for boards</li>
+      <li>Hiring and mentoring security engineers</li>
+    </ul>
+  </section>
+  <section>
+    <h2 class="label">Things I've built</h2>
+    <div class="projects">
+      <a class="proj" href="https://github.com/corifeo/VulnState"><span class="name">vulnstate</span><p>Models each CVE as a disclosure state machine using NVD, EPSS and KEV data, so you can ask "was it a zero-day?" across a whole dataset.</p></a>
+      <a class="proj" href="https://github.com/corifeo/fuzzyhash"><span class="name">fuzzyhash</span><p>ssdeep fuzzy hashing in Python and Cython, fast enough to sweep a folder of malware samples in seconds.</p></a>
+      <a class="proj" href="https://github.com/corifeo/notebooks"><span class="name">notebooks</span><p>Data exploration in Jupyter, including a risk model built on the NIST Cybersecurity Framework.</p></a>
+    </div>
+  </section>
+</div>
 
-<section class="block">
-  <h2>Things I've built</h2>
-  <dl class="projects">
-    <div>
-      <dt><a href="https://github.com/corifeo/VulnState">vulnstate</a></dt>
-      <dd>Models each CVE as a disclosure state machine using NVD, EPSS and KEV data, so you can ask "was it a zero-day?" or "did the fix beat the exploit?" across a whole dataset.</dd>
-    </div>
-    <div>
-      <dt><a href="https://github.com/corifeo/fuzzyhash">fuzzyhash</a></dt>
-      <dd>ssdeep fuzzy hashing in Python and Cython, fast enough to sweep a folder of malware samples in seconds.</dd>
-    </div>
-    <div>
-      <dt><a href="https://github.com/corifeo/notebooks">notebooks</a></dt>
-      <dd>Data exploration in Jupyter, including a simple risk model built on the NIST Cybersecurity Framework.</dd>
-    </div>
-  </dl>
-</section>
-
-<section class="block">
-  <h2>Get in touch</h2>
-  <p>The best way to reach me is on <a href="https://www.linkedin.com/in/francescomanzoni/">LinkedIn</a>.</p>
+<section class="contact">
+  <h2 class="label">Get in touch</h2>
+  <div class="links">
+    <a class="big" href="https://www.linkedin.com/in/francescomanzoni/">LinkedIn</a>
+  </div>
 </section>

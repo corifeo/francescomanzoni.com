@@ -1,0 +1,22 @@
+---
+layout: default
+title: Writing
+nav: writing
+permalink: /writing/
+---
+<div class="writing">
+  <h1 class="page">Writing</h1>
+  {% if site.posts.size > 0 %}
+  <ul class="posts">
+    {% for post in site.posts %}
+    <li><a class="post-row" href="{{ post.url }}">
+      <span class="date">{{ post.date | date: "%-d %b %Y" }}</span>
+      <span class="title">{{ post.title }}{% if post.description %}<span class="desc">{{ post.description }}</span>{% endif %}</span>
+    </a></li>
+    {% endfor %}
+  </ul>
+  <p class="note">Follow new posts with the <a class="ul always" href="/feed.xml">Atom feed</a>.</p>
+  {% else %}
+  <p class="note">Nothing here yet.</p>
+  {% endif %}
+</div>
