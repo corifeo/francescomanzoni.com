@@ -2,7 +2,7 @@
 layout: null
 permalink: /.well-known/security.txt
 ---
-Contact: https://www.linkedin.com/in/CHANGE-ME/
+Contact: https://www.linkedin.com/in/francescomanzoni/
 Expires: 2027-11-01T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://francescomanzoni.com/.well-known/security.txt
