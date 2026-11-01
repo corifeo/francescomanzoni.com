@@ -10,9 +10,18 @@
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <main>
-    <figure>
-      <svg viewBox="0 0 420 270" role="img" aria-labelledby="art-title">
+  <div class="wrap">
+    <header class="site">
+      <span class="home">francescomanzoni.com</span>
+      <nav aria-label="Main">
+        <a class="ul" href="https://github.com/corifeo">GitHub</a>
+        <a class="ul" href="https://www.linkedin.com/in/francescomanzoni/">LinkedIn</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>Patching<br>the moat.</h1>
+        <svg class="art" viewBox="0 0 420 270" role="img" aria-labelledby="art-title">
         <title id="art-title">A crane lowers a leaking bucket of water into a castle's empty moat.</title>
 
         <!-- ground -->
@@ -61,11 +70,18 @@
         <rect class="s fill" x="14" y="140" width="52" height="22"/>
         <text x="40" y="155">moat</text>
       </svg>
-    </figure>
 
-    <h1>Patching the moat.</h1>
-    <p>This site is down for maintenance and will be back shortly.</p>
-    <p class="links">Meanwhile, find me on <a href="https://www.linkedin.com/in/francescomanzoni/">LinkedIn</a> or <a href="https://github.com/corifeo">GitHub</a>.</p>
-  </main>
+      </section>
+      <section class="band">
+        <p class="lede">This site is down for maintenance and will be back shortly.</p>
+        <p class="aside">Nothing is wrong with your connection.</p>
+      </section>
+      <p class="label">Meanwhile, find me on</p>
+      <div class="links">
+        <a class="big" href="https://www.linkedin.com/in/francescomanzoni/">LinkedIn</a>
+        <a class="big" href="https://github.com/corifeo">GitHub</a>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
