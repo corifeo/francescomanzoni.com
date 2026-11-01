@@ -142,3 +142,6 @@ footer.site a { color: var(--graphite); }
   .block { grid-template-columns: 1fr; }
   .block > :not(h2) { grid-column: 1; }
 }
+
+.block p + p { margin-top: 1rem; }
+.block .creds { color: var(--graphite); }
