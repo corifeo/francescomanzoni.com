@@ -18,6 +18,7 @@
 }
 
 :root {
+  color-scheme: only light;
   --ink: #000;
   --paper: #fff;
   --soft: #555;
@@ -27,15 +28,24 @@
 }
 
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scrollbar-color: var(--ink) var(--paper); }
 body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
   font: 400 18px/1.5 "Familjen Grotesk", system-ui, sans-serif;
 }
-a { color: var(--ink); }
+::selection { background: var(--ink); color: var(--paper); }
+a { color: var(--ink); text-underline-offset: 4px; transition: color var(--ease); }
+a:hover { color: var(--soft); }
 a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.skip {
+  position: absolute; top: 0; left: var(--pad); padding: 8px 14px;
+  background: var(--ink); text-decoration: none; transform: translateY(-100%);
+}
+.skip, .skip:hover { color: var(--paper); }
+.skip:focus { transform: none; }
 
 .wrap { max-width: 1200px; margin: 0 auto; padding: 32px var(--pad) 56px; }
 
@@ -45,11 +55,11 @@ header.site {
   gap: 12px 28px; font-size: 17px; margin-bottom: clamp(48px, 9vw, 96px);
 }
 .home { text-decoration: none; font-weight: 600; }
-.home:hover { text-decoration: underline; text-underline-offset: 4px; }
+.home:hover { text-decoration: underline; }
 header.site nav { display: flex; gap: 28px; }
 
 /* Links that gain an underline on hover */
-.ul { text-decoration: none; border-bottom: 1.5px solid transparent; padding-bottom: 2px; transition: border-color var(--ease); }
+.ul { text-decoration: none; border-bottom: 1.5px solid transparent; padding-bottom: 2px; transition: border-color var(--ease), color var(--ease); }
 .ul:hover, .ul:focus-visible, .ul.on, .ul.always { border-bottom-color: var(--ink); }
 
 /* Links that invert on hover */
@@ -71,7 +81,8 @@ header.site nav { display: flex; gap: 28px; }
   font-size: clamp(44px, 12vw, 156px);
 }
 .hero h1 { flex: 1 1 auto; min-width: 0; }
-.castle { display: block; flex: 0 0 auto; width: clamp(88px, 27vw, 360px); height: auto; }
+h1.page { margin-bottom: clamp(28px, 5vw, 48px); }
+.castle { display: block; flex: 0 0 auto; width: clamp(84px, 25.8vw, 344px); height: auto; }
 .lede {
   margin: 0 0 clamp(56px, 9vw, 96px); max-width: 860px;
   font-size: clamp(21px, 2.4vw, 28px); line-height: 1.38; letter-spacing: -0.01em;
@@ -87,7 +98,7 @@ h2.label { margin: 0; font-size: 17px; font-weight: 600; }
 .row-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px; }
 .timeline .row-head { margin-bottom: 8px; font-size: 17px; }
 .track { position: relative; height: 120px; margin: 0 clamp(28px, 5vw, 48px); }
-.track .axis { position: absolute; left: 0; right: 0; top: 52px; height: 1px; background: var(--ink); }
+.track .axis { position: absolute; left: 0; right: 0; top: 52px; border-top: 1px solid var(--ink); }
 .ev {
   position: absolute; top: 44px; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 14px;
@@ -95,7 +106,7 @@ h2.label { margin: 0; font-size: 17px; font-weight: 600; }
   animation: 15s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 .ev .dot { display: block; width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--ink); background: var(--paper); }
-.ev .sq { display: block; width: 16px; height: 16px; background: var(--ink); }
+.ev .sq { display: block; width: 16px; height: 16px; border: 8px solid var(--ink); }
 .ev.exp { font-weight: 700; }
 .ev.rep { left: 8%;  animation-name: evRep; }
 .ev.fix { left: 36%; animation-name: evFix; }
@@ -106,8 +117,8 @@ h2.label { margin: 0; font-size: 17px; font-weight: 600; }
 @keyframes evDis { 0%, 61% { left: 64%; } 66%, 94% { left: 36%; } 100% { left: 64%; } }
 @keyframes evExp { 0%, 28% { left: 92%; } 33%, 61% { left: 8%; }  66%, 94% { left: 64%; } 100% { left: 92%; } }
 
-.caps { position: relative; height: 2.5em; font-size: clamp(20px, 3vw, 30px); line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; }
-.cap { position: absolute; inset: 0; margin: 0; opacity: 0; animation: 15s linear infinite; }
+.caps { display: grid; font-size: clamp(20px, 3vw, 30px); line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; }
+.cap { grid-area: 1 / 1; margin: 0; opacity: 0; animation: 15s linear infinite; }
 .cap.c1 { opacity: 1; animation-name: cap1; }
 .cap.c2 { animation-name: cap2; }
 .cap.c3 { animation-name: cap3; }
@@ -116,6 +127,7 @@ h2.label { margin: 0; font-size: 17px; font-weight: 600; }
 @keyframes cap3 { 0%, 63% { opacity: 0; } 66%, 94% { opacity: 1; } 97%, 100% { opacity: 0; } }
 
 @media (prefers-reduced-motion: reduce) {
+  :root { --ease: 0s; }
   .ev, .cap { animation: none; }
 }
 
@@ -125,10 +137,10 @@ h2.label { margin: 0; font-size: 17px; font-weight: 600; }
 .posts { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--ink); }
 .post-row {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 40px;
-  padding: 22px 0; border-top: 1px solid var(--ink); text-decoration: none;
+  padding: 22px 32px 22px 0; border-top: 1px solid var(--ink); text-decoration: none; /* same text width as the hover state, so rows never rewrap */
   transition: background-color var(--ease), color var(--ease), padding var(--ease);
 }
-.post-row .date { flex: 0 0 140px; font-size: 17px; color: var(--soft); transition: color var(--ease); }
+.post-row .date { flex: 0 0 140px; font-size: 17px; font-variant-numeric: tabular-nums; color: var(--soft); transition: color var(--ease); }
 .post-row .title { flex: 1 1 420px; min-width: 0; font-size: clamp(22px, 2.6vw, 28px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
 .post-row .desc { display: block; margin-top: 6px; font-size: 18px; font-weight: 400; letter-spacing: 0; color: var(--soft); transition: color var(--ease); }
 .post-row:hover, .post-row:focus-visible { background: var(--ink); color: var(--paper); padding: 22px 16px; }
@@ -139,7 +151,6 @@ h2.label { margin: 0; font-size: 17px; font-weight: 600; }
 .writing .posts { margin-bottom: 40px; }
 .writing .post-row .title { font-size: clamp(24px, 3vw, 34px); letter-spacing: -0.025em; line-height: 1.15; }
 .note { margin: 0; font-size: 17px; color: var(--soft); }
-.note a { color: var(--ink); }
 
 /* Work and projects */
 .cols { display: flex; flex-wrap: wrap; gap: 56px 72px; margin-bottom: clamp(56px, 9vw, 88px); }
@@ -149,9 +160,12 @@ h2.label { margin: 0; font-size: 17px; font-weight: 600; }
 .cols h2.label { margin-bottom: 20px; }
 
 .work { list-style: none; margin: 0; padding: 0; font-size: clamp(20px, 2.2vw, 25px); line-height: 1.3; font-weight: 500; letter-spacing: -0.01em; }
-.work li { padding: 14px 0; border-top: 1px solid var(--ink); transition: background-color var(--ease), color var(--ease), padding var(--ease); }
+.work li { padding: 14px 28px 14px 0; border-top: 1px solid var(--ink); transition: background-color var(--ease), color var(--ease), padding var(--ease); }
 .work li:last-child { border-bottom: 1px solid var(--ink); }
-.work li:hover { background: var(--ink); color: var(--paper); padding: 14px; }
+@media (hover: hover) {
+  .work li:hover { background: var(--ink); color: var(--paper); padding: 14px; }
+  .work li:hover::selection { background: var(--paper); color: var(--ink); }
+}
 
 .projects { display: flex; flex-direction: column; gap: 28px; }
 .proj { display: block; padding: 14px; margin: -14px; text-decoration: none; transition: background-color var(--ease), color var(--ease); }
@@ -174,7 +188,6 @@ article.post h1 { margin: 0 0 56px; font-size: clamp(44px, 7vw, 88px); font-weig
 .prose h3 { margin: 36px 0 10px; font-size: 23px; font-weight: 700; }
 .prose ul, .prose ol { padding-left: 22px; }
 .prose li { margin: 0 0 10px; }
-.prose a { text-underline-offset: 4px; }
 .prose a:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
 .prose blockquote { margin: 32px 0; padding: 4px 0 4px 22px; border-left: 3px solid var(--ink); font-size: clamp(24px, 2.6vw, 30px); font-weight: 600; line-height: 1.25; letter-spacing: -0.015em; }
 .prose blockquote p { margin: 0; }
@@ -188,3 +201,7 @@ article.post h1 { margin: 0 0 56px; font-size: clamp(44px, 7vw, 88px); font-weig
 }
 
 footer.site p { margin: 72px 0 0; font-size: 14px; color: var(--soft); }
+
+/* Line breaks */
+article.post h1, .prose h2, .prose h3, .post-row .title, .cap { text-wrap: balance; }
+.lede, .proj p, .prose p, .post-row .desc { text-wrap: pretty; }
