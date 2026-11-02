@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Threat modelling in the age of AI
-subtitle: The engine won't tell you about the pedestrian
-description: An agent can threat model your software in minutes, but it was trained on what firms and experts choose to disclose. Like the prisoners in Plato's cave, it sees only the shadows of what went wrong.
+subtitle: The engine won’t tell you about the pedestrian
+description: An agent can threat model your software in minutes, but it was trained on what firms and experts choose to disclose. Like the prisoners in Plato’s cave, it sees only the shadows of what went wrong.
 ---
 An agent can threat model your software now. Point it at the code and the architecture and within minutes it will list the data flows, the threats and the mitigations, and the result is often decent. So does threat modelling still need a human in the loop?
 
