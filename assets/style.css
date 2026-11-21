@@ -1,5 +1,5 @@
 /* francescomanzoni.com
-   Black and white, one typeface, no JavaScript.
+   Black and white, one typeface. The only script is the background in sky.js.
    The CSP blocks inline style attributes: every style lives here. */
 
 @font-face {
@@ -130,6 +130,22 @@ h2.label { margin: 0; font-size: 17px; font-weight: 600; }
   :root { --ease: 0s; }
   .ev, .cap { animation: none; }
 }
+
+/* Background constellation, drawn by /assets/sky.js behind everything */
+.sky { position: fixed; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
+@media print { .sky { display: none; } }
+
+/* Home sections fade up as they scroll in. Browsers without scroll timelines show them as they are. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .timeline, .latest, .cols > section, .contact {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+  }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(32px); } }
 
 /* Post lists (home and writing index) */
 .latest { margin-bottom: clamp(64px, 10vw, 104px); }
